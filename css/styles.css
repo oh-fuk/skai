@@ -652,10 +652,15 @@ p {
   position: relative;
 }
 
+.nav-menu .dropdown>a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .nav-menu .dropdown>a::after {
-  content: ' ▼';
+  content: '▼';
   font-size: 0.7rem;
-  margin-left: 0.3rem;
 }
 
 .dropdown-menu {
@@ -749,6 +754,11 @@ p {
 
   .trust-items {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact Page Responsive */
+  .section-white>.container>div[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
   }
 }
 

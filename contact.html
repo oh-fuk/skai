@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Get in Touch | SKAICONNECT</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="nav-logo">SKAI<span>CONNECT</span></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#services">Services</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="design-optimization.html">Contact Center Design & Optimization</a></li>
+                            <li><a href="consulting.html">Consulting & Project Management</a></li>
+                            <li><a href="customer-experience.html">Dynamic Customer Experience</a></li>
+                            <li><a href="migration.html">End-to-End Cloud Migration</a></li>
+                            <li><a href="telecom.html">Telecom Implementation & Operations</a></li>
+                            <li><a href="channels.html">Inbound / Outbound / Telemarketing</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#resources">Resources</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="blog.html">Blog</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="careers.html">Careers</a></li>
+                    <li><a href="why-us.html">Why Choose Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" style="padding: var(--spacing-xl) 0;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h1>Get in Touch with Us</h1>
+                <p style="font-size: 1.25rem; color: #D1D5DB;">Ready to transform your contact center? Our team of
+                    experts is here to help you every step of the way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form & Info Section -->
+    <section class="section section-white">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); align-items: start;">
+
+                <!-- Contact Form -->
+                <div>
+                    <h2 style="margin-bottom: var(--spacing-md);">Send Us a Message</h2>
+                    <form id="contactForm" style="display: flex; flex-direction: column; gap: var(--spacing-md);">
+                        <div>
+                            <label for="name"
+                                style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--charcoal);">Full
+                                Name *</label>
+                            <input type="text" id="name" name="name" required
+                                style="width: 100%; padding: 1rem; border: 2px solid var(--border-divider); border-radius: 8px; font-size: 1rem; font-family: var(--font-primary);">
+                        </div>
+
+                        <div>
+                            <label for="email"
+                                style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--charcoal);">Email
+                                Address *</label>
+                            <input type="email" id="email" name="email" required
+                                style="width: 100%; padding: 1rem; border: 2px solid var(--border-divider); border-radius: 8px; font-size: 1rem; font-family: var(--font-primary);">
+                        </div>
+
+                        <div>
+                            <label for="phone"
+                                style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--charcoal);">Phone
+                                Number</label>
+                            <input type="tel" id="phone" name="phone"
+                                style="width: 100%; padding: 1rem; border: 2px solid var(--border-divider); border-radius: 8px; font-size: 1rem; font-family: var(--font-primary);">
+                        </div>
+
+                        <div>
+                            <label for="company"
+                                style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--charcoal);">Company
+                                Name</label>
+                            <input type="text" id="company" name="company"
+                                style="width: 100%; padding: 1rem; border: 2px solid var(--border-divider); border-radius: 8px; font-size: 1rem; font-family: var(--font-primary);">
+                        </div>
+
+                        <div>
+                            <label for="service"
+                                style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--charcoal);">Service
+                                Interested In *</label>
+                            <select id="service" name="service" required
+                                style="width: 100%; padding: 1rem; border: 2px solid var(--border-divider); border-radius: 8px; font-size: 1rem; font-family: var(--font-primary); background: white;">
+                                <option value="">Select a service</option>
+                                <option value="cloud-migration">Cloud Migration</option>
+                                <option value="design-optimization">Contact Center Design & Optimization</option>
+                                <option value="consulting">Consulting & Project Management</option>
+                                <option value="customer-experience">Dynamic Customer Experience</option>
+                                <option value="telecom">Telecom Implementation</option>
+                                <option value="channels">Omnichannel Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message"
+                                style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: var(--charcoal);">Message
+                                *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                style="width: 100%; padding: 1rem; border: 2px solid var(--border-divider); border-radius: 8px; font-size: 1rem; font-family: var(--font-primary); resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            Send Message <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Information -->
+                <div>
+                    <h2 style="margin-bottom: var(--spacing-md);">Contact Information</h2>
+
+                    <div style="display: flex; flex-direction: column; gap: var(--spacing-lg);">
+
+                        <!-- Office Location -->
+                        <div class="card" style="border-left: 4px solid var(--primary-red);">
+                            <div style="display: flex; align-items: start; gap: var(--spacing-md);">
+                                <div
+                                    style="width: 50px; height: 50px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-map-marker-alt" style="color: white; font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 0.5rem; color: var(--charcoal);">Office Location</h3>
+                                    <p style="color: var(--text-muted); margin: 0;">Tampa, Florida<br>United States</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="card" style="border-left: 4px solid var(--primary-red);">
+                            <div style="display: flex; align-items: start; gap: var(--spacing-md);">
+                                <div
+                                    style="width: 50px; height: 50px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-envelope" style="color: white; font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 0.5rem; color: var(--charcoal);">Email Us</h3>
+                                    <p style="color: var(--text-muted); margin: 0;">
+                                        <a href="mailto:project@skaiconnect.com"
+                                            style="color: var(--primary-red); text-decoration: none;">project@skaiconnect.com</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="card" style="border-left: 4px solid var(--primary-red);">
+                            <div style="display: flex; align-items: start; gap: var(--spacing-md);">
+                                <div
+                                    style="width: 50px; height: 50px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-phone" style="color: white; font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 0.5rem; color: var(--charcoal);">Call Us</h3>
+                                    <p style="color: var(--text-muted); margin: 0;">
+                                        <a href="tel:800-484-2275"
+                                            style="color: var(--primary-red); text-decoration: none;">800-484-2275</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Work Hours -->
+                        <div class="card" style="border-left: 4px solid var(--primary-red);">
+                            <div style="display: flex; align-items: start; gap: var(--spacing-md);">
+                                <div
+                                    style="width: 50px; height: 50px; background: var(--accent-gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                    <i class="fas fa-clock" style="color: white; font-size: 1.5rem;"></i>
+                                </div>
+                                <div>
+                                    <h3 style="margin-bottom: 0.5rem; color: var(--charcoal);">Business Hours</h3>
+                                    <p style="color: var(--text-muted); margin: 0;">Monday - Saturday<br>9:00 AM - 5:00
+                                        PM EST</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Social Media -->
+                    <div style="margin-top: var(--spacing-lg);">
+                        <h3 style="margin-bottom: var(--spacing-md);">Follow Us</h3>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Contact Us Section -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose SKAICONNECT?</h2>
+                <p style="max-width: 800px; margin: 0 auto; color: var(--text-muted);">We're committed to delivering
+                    exceptional cloud contact center solutions tailored to your business needs.</p>
+            </div>
+
+            <div class="card-grid">
+                <div class="card card-accent-top">
+                    <div class="card-icon"><i class="fas fa-headset"></i></div>
+                    <h3>24/7 Expert Support</h3>
+                    <p>Our team is available around the clock to assist you with any questions or concerns.</p>
+                </div>
+
+                <div class="card card-accent-top">
+                    <div class="card-icon"><i class="fas fa-rocket"></i></div>
+                    <h3>Fast Response Time</h3>
+                    <p>We respond to all inquiries within 24 hours, ensuring you get the help you need quickly.</p>
+                </div>
+
+                <div class="card card-accent-top">
+                    <div class="card-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Proven Track Record</h3>
+                    <p>500+ successful migrations and a 99.9% customer satisfaction rate speak for themselves.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Get Started?</h2>
+                <p>Schedule a free consultation with our experts and discover how we can transform your contact center.
+                </p>
+                <a href="#contactForm" class="btn btn-gold">Book Free Consultation →</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">SKAI<span style="color: var(--primary-red);">CONNECT</span></div>
+                    <p class="footer-tagline">Powering the Future of Customer Experience</p>
+                    <p
+                        style="color: var(--text-muted); font-size: 0.95rem; margin-top: var(--spacing-sm); line-height: 1.6;">
+                        Explore skaiconnect.com for innovative business solutions, technology integration, and expert
+                        services designed to enhance connectivity and drive growth in today's digital world.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#solutions">Our Solutions</a></li>
+                        <li><a href="why-us.html">Why Choose Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="design-optimization.html">Design & Optimization</a></li>
+                        <li><a href="migration.html">Cloud Migration</a></li>
+                        <li><a href="consulting.html">Consulting & PM</a></li>
+                        <li><a href="telecom.html">Telecom Solutions</a></li>
+                        <li><a href="channels.html">Omnichannel Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li style="display: flex; align-items: start; gap: 0.5rem;"><span
+                                style="color: var(--accent-gold);"><i
+                                    class="fas fa-map-marker-alt"></i></span><span>Tampa, Florida</span></li>
+                        <li style="display: flex; align-items: start; gap: 0.5rem;"><span
+                                style="color: var(--accent-gold);"><i class="fas fa-envelope"></i></span><a
+                                href="mailto:project@skaiconnect.com">project@skaiconnect.com</a></li>
+                        <li style="display: flex; align-items: start; gap: 0.5rem;"><span
+                                style="color: var(--accent-gold);"><i class="fas fa-phone"></i></span><a
+                                href="tel:800-484-2275">800-484-2275</a>
+                        </li>
+                    </ul>
+                    <h4 style="margin-top: var(--spacing-md);">Work Hours</h4>
+                    <ul class="footer-links">
+                        <li style="display: flex; align-items: start; gap: 0.5rem;"><span
+                                style="color: var(--accent-gold);"><i class="fas fa-clock"></i></span><span>9 AM - 5
+                                PM<br>Monday -
+                                Saturday</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: var(--spacing-lg);">
+                <div class="social-icons" style="justify-content: center;">
+                    <a href="#" class="social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a href="#" class="social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Made with <i class="fas fa-heart" style="color: var(--primary-red);"></i> by Socialiency Advertising
+                </p>
+                <p>&copy; 2024 SKAI Connect. All rights reserved. | <a href="#"
+                        style="color: var(--text-muted);">Privacy Policy</a> | <a href="#"
+                        style="color: var(--text-muted);">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                company: document.getElementById('company').value,
+                service: document.getElementById('service').value,
+                message: document.getElementById('message').value
+            };
+
+            // Show success message
+            alert('Thank you for contacting us! We will get back to you within 24 hours.');
+
+            // Reset form
+            this.reset();
+
+            // In production, you would send this data to your backend
+            console.log('Form submitted:', formData);
+        });
+    </script>
+</body>
+
+</html>
