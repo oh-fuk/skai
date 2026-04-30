@@ -1,0 +1,41 @@
+<!-- 
+    BLOG CARD TEMPLATE
+    Copy this and paste it inside <div id="blogGrid"> in blog.html
+    Replace ALL_CAPS text with your content
+-->
+
+<!-- Blog Post NUMBER -->
+<article class="blog-article" data-category="YOUR_CATEGORY" data-title="YOUR_BLOG_TITLE">
+    <img src="YOUR_IMAGE_URL" alt="YOUR_IMAGE_DESCRIPTION" style="width: 100%; height: 200px; object-fit: cover;">
+    <div style="padding: var(--spacing-md);">
+        <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+            <!-- Use var(--primary-red) for red or var(--accent-gold) for gold -->
+            <span
+                style="background: var(--primary-red); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.875rem;">YOUR_CATEGORY</span>
+            <span style="color: var(--text-muted); font-size: 0.875rem;"><i class="far fa-calendar"></i>
+                YOUR_DATE</span>
+        </div>
+        <h3 style="margin-bottom: var(--spacing-sm); color: var(--charcoal);">YOUR_BLOG_TITLE</h3>
+        <p style="color: var(--text-muted); margin-bottom: var(--spacing-md);">YOUR_SHORT_DESCRIPTION (2-3 sentences)
+        </p>
+        <a href="blog-post-NUMBER.html" style="color: var(--primary-red); font-weight: 600; text-decoration: none;">Read
+            More <i class="fas fa-arrow-right"></i></a>
+    </div>
+</article>
+
+<!-- 
+    EXAMPLE - Real Blog Card:
+    
+    <article class="blog-article" data-category="AI & Automation" data-title="How to Use AI Chatbots Effectively">
+        <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=500&h=300&fit=crop" alt="AI Chatbot" style="width: 100%; height: 200px; object-fit: cover;">
+        <div style="padding: var(--spacing-md);">
+            <div style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                <span style="background: var(--accent-gold); color: white; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.875rem;">AI & Automation</span>
+                <span style="color: var(--text-muted); font-size: 0.875rem;"><i class="far fa-calendar"></i> May 1, 2024</span>
+            </div>
+            <h3 style="margin-bottom: var(--spacing-sm); color: var(--charcoal);">How to Use AI Chatbots Effectively</h3>
+            <p style="color: var(--text-muted); margin-bottom: var(--spacing-md);">Discover best practices for implementing AI chatbots in your contact center to improve response times and customer satisfaction.</p>
+            <a href="blog-post-10.html" style="color: var(--primary-red); font-weight: 600; text-decoration: none;">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+-->

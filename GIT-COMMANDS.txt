@@ -1,0 +1,330 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                    GIT COMMANDS - QUICK REFERENCE                        ║
+║                         SKAICONNECT PROJECT                              ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🚀 FIRST TIME SETUP (Ek Baar Karna Hai)                                 │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Step 1: Apne skaiconnect folder mein jao
+cd skaiconnect
+
+# Step 2: Git initialize karo
+git init
+
+# Step 3: Git config set karo (apna naam aur email)
+git config user.name "Your Name"
+git config user.email "your.email@example.com"
+
+# Step 4: Saari files add karo
+git add .
+
+# Step 5: First commit banao
+git commit -m "Initial commit - SKAICONNECT website complete"
+
+# Step 6: GitHub repository se connect karo
+# (Pehle GitHub pe repository banana padega!)
+git remote add origin https://github.com/YOUR_USERNAME/skaiconnect.git
+
+# Step 7: Main branch set karo
+git branch -M main
+
+# Step 8: Push karo GitHub pe
+git push -u origin main
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 📝 DAILY USE COMMANDS (Har Update Ke Liye)                              │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Step 1: Changes check karo
+git status
+
+# Step 2: Saari changed files add karo
+git add .
+
+# Ya specific file add karo
+git add blog-post-10.html
+git add blog.html
+
+# Step 3: Commit banao with message
+git commit -m "Added new blog post about AI"
+
+# Step 4: GitHub pe push karo
+git push
+
+# Done! Vercel automatically deploy kar dega! 🚀
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🔄 COMMON WORKFLOWS                                                      │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# WORKFLOW 1: Naya Blog Post Add Kiya
+git add blog-post-10.html blog.html
+git commit -m "Added blog post: How to improve customer service"
+git push
+
+# WORKFLOW 2: Multiple Files Update Kiye
+git add .
+git commit -m "Updated homepage and added 2 new blog posts"
+git push
+
+# WORKFLOW 3: CSS/JS Changes
+git add css/styles.css js/main.js
+git commit -m "Updated styles and fixed navigation bug"
+git push
+
+# WORKFLOW 4: Images Add Kiye
+git add images/
+git commit -m "Added new blog post images"
+git push
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 📊 USEFUL COMMANDS                                                       │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Current status dekho
+git status
+
+# Commit history dekho
+git log
+
+# Short commit history
+git log --oneline
+
+# Changes dekho (before commit)
+git diff
+
+# Specific file ka diff dekho
+git diff blog.html
+
+# Remote repository info
+git remote -v
+
+# Current branch dekho
+git branch
+
+# All branches dekho
+git branch -a
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🔙 UNDO COMMANDS (Galti Ho Gayi To)                                     │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Unstage karo (git add ke baad)
+git reset HEAD filename.html
+
+# Saari files unstage karo
+git reset HEAD .
+
+# Last commit undo karo (changes rahenge)
+git reset --soft HEAD~1
+
+# Last commit undo karo (changes bhi delete)
+git reset --hard HEAD~1
+
+# Specific file ke changes discard karo
+git checkout -- filename.html
+
+# Saare uncommitted changes discard karo
+git checkout -- .
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🌿 BRANCH COMMANDS (Advanced)                                           │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Naya branch banao
+git branch feature-new-design
+
+# Branch switch karo
+git checkout feature-new-design
+
+# Naya branch banao aur switch karo (ek command mein)
+git checkout -b feature-new-design
+
+# Branch merge karo
+git checkout main
+git merge feature-new-design
+
+# Branch delete karo
+git branch -d feature-new-design
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🔄 SYNC COMMANDS                                                         │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Latest changes pull karo (GitHub se)
+git pull
+
+# Specific branch pull karo
+git pull origin main
+
+# Force pull (local changes overwrite honge)
+git fetch --all
+git reset --hard origin/main
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🚨 EMERGENCY COMMANDS                                                    │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Sab kuch reset karo (CAREFUL!)
+git reset --hard HEAD
+
+# Last working state pe jao
+git reset --hard origin/main
+
+# Specific commit pe jao
+git reset --hard COMMIT_HASH
+
+# Stash karo (temporary save)
+git stash
+
+# Stash wapas lao
+git stash pop
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 📝 COMMIT MESSAGE BEST PRACTICES                                        │
+└──────────────────────────────────────────────────────────────────────────┘
+
+GOOD COMMIT MESSAGES:
+✓ "Added new blog post about cloud migration"
+✓ "Fixed navigation menu on mobile devices"
+✓ "Updated homepage hero section"
+✓ "Removed old blog posts and added 3 new ones"
+✓ "Optimized images for faster loading"
+
+BAD COMMIT MESSAGES:
+✗ "update"
+✗ "changes"
+✗ "fix"
+✗ "asdf"
+✗ "test"
+
+FORMAT:
+[Action] [What] [Where/Why]
+
+Examples:
+- Added blog post about AI in customer service
+- Fixed broken links in footer
+- Updated contact information on all pages
+- Removed deprecated CSS styles
+- Optimized images in blog posts
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🎯 COMPLETE WORKFLOW EXAMPLE                                            │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Scenario: Aapne 2 naye blog posts add kiye
+
+# Step 1: Check karo kya changes hain
+git status
+
+# Output:
+# modified:   blog.html
+# new file:   blog-post-10.html
+# new file:   blog-post-11.html
+
+# Step 2: Saari files add karo
+git add .
+
+# Step 3: Commit banao
+git commit -m "Added 2 new blog posts: AI trends and Remote work tips"
+
+# Step 4: Push karo
+git push
+
+# Step 5: Vercel pe check karo (auto-deploy hoga)
+# Visit: https://your-site.vercel.app
+
+# Done! ✅
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🔍 TROUBLESHOOTING                                                       │
+└──────────────────────────────────────────────────────────────────────────┘
+
+PROBLEM: "fatal: not a git repository"
+SOLUTION: 
+  cd skaiconnect
+  git init
+
+PROBLEM: "Permission denied (publickey)"
+SOLUTION:
+  # GitHub pe SSH key add karo
+  # Ya HTTPS use karo instead of SSH
+
+PROBLEM: "Your branch is ahead of 'origin/main'"
+SOLUTION:
+  git push
+
+PROBLEM: "merge conflict"
+SOLUTION:
+  # Conflicted files manually edit karo
+  git add .
+  git commit -m "Resolved merge conflicts"
+  git push
+
+PROBLEM: "Changes not showing on Vercel"
+SOLUTION:
+  # Push properly hua check karo
+  git push
+  # Vercel dashboard mein deployment check karo
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 📚 USEFUL ALIASES (Optional - Time Bachao!)                             │
+└──────────────────────────────────────────────────────────────────────────┘
+
+# Aliases set karo (ek baar)
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.unstage 'reset HEAD --'
+
+# Ab use karo:
+git st          # instead of git status
+git co main     # instead of git checkout main
+git br          # instead of git branch
+git ci -m "msg" # instead of git commit -m "msg"
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🎯 QUICK REFERENCE CARD                                                 │
+└──────────────────────────────────────────────────────────────────────────┘
+
+MOST USED COMMANDS (90% of the time):
+
+1. git status          → Check changes
+2. git add .           → Add all files
+3. git commit -m "msg" → Commit with message
+4. git push            → Push to GitHub
+5. git pull            → Get latest changes
+
+REMEMBER:
+- Commit often (har logical change ke baad)
+- Write clear commit messages
+- Push regularly (daily ya har major change ke baad)
+- Pull before starting work (agar team mein kaam kar rahe ho)
+
+┌──────────────────────────────────────────────────────────────────────────┐
+│ 🚀 DEPLOYMENT WORKFLOW                                                   │
+└──────────────────────────────────────────────────────────────────────────┘
+
+LOCAL CHANGES → GIT COMMIT → GITHUB PUSH → VERCEL AUTO-DEPLOY → LIVE! 🎉
+
+1. Make changes locally
+2. git add .
+3. git commit -m "description"
+4. git push
+5. Vercel automatically deploys
+6. Check live site!
+
+Time: ~2-3 minutes total! ⚡
+
+╔══════════════════════════════════════════════════════════════════════════╗
+║  Pro Tip: Har din ka ek commit banao, even if small changes. Git       ║
+║  history clean aur organized rahegi!                                     ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+Need more help?
+- Git Documentation: https://git-scm.com/doc
+- GitHub Guides: https://guides.github.com
+- DEPLOYMENT-GUIDE.md (in this project)
