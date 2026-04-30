@@ -1,6 +1,8 @@
-// SKAICONNECT - Main JavaScript
+// SKAICONNECT - Main JavaScript with Advanced Animations
 
-// Smooth scrolling for anchor links
+// ============================================
+// SMOOTH SCROLLING
+// ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -17,7 +19,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Add active class to current page in navigation
+// ============================================
+// ACTIVE PAGE NAVIGATION
+// ============================================
 document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-menu a');
@@ -30,13 +34,67 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Intersection Observer for fade-in animations
+// ============================================
+// COUNTER ANIMATION FOR NUMBERS
+// ============================================
+function animateCounter(element, target, duration = 2000, suffix = '') {
+    const start = 0;
+    const increment = target / (duration / 16);
+    let current = start;
+
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target + suffix;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current) + suffix;
+        }
+    }, 16);
+}
+
+// ============================================
+// INTERSECTION OBSERVER FOR ANIMATIONS
+// ============================================
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+// Counter Animation Observer
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+            entry.target.classList.add('counted');
+            const text = entry.target.textContent;
+
+            // Extract number and suffix
+            let number = parseInt(text.replace(/[^0-9]/g, ''));
+            let suffix = text.replace(/[0-9]/g, '').trim();
+
+            // Handle percentage
+            if (text.includes('%')) {
+                suffix = '%';
+            }
+            // Handle multipliers like 2x, 3x
+            else if (text.includes('x')) {
+                suffix = 'x';
+            }
+            // Handle + signs
+            else if (text.includes('+')) {
+                suffix = '+';
+            }
+
+            if (!isNaN(number)) {
+                entry.target.textContent = '0' + suffix;
+                animateCounter(entry.target, number, 2000, suffix);
+            }
+        }
+    });
+}, observerOptions);
+
+// Fade-in Animation Observer
+const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.opacity = '1';
@@ -45,14 +103,99 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards and sections for animation
+// Slide-in from Left Observer
+const slideLeftObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+        }
+    });
+}, observerOptions);
+
+// Slide-in from Right Observer
+const slideRightObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+        }
+    });
+}, observerOptions);
+
+// Scale-up Animation Observer
+const scaleObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'scale(1)';
+        }
+    });
+}, observerOptions);
+
+// ============================================
+// INITIALIZE ANIMATIONS ON PAGE LOAD
+// ============================================
 document.addEventListener('DOMContentLoaded', function () {
-    const animatedElements = document.querySelectorAll('.card, .timeline-item, .stat-item');
-    animatedElements.forEach(el => {
+
+    // Counter animations for stat items
+    const statNumbers = document.querySelectorAll('.stat-item h2, .stats-grid h2');
+    statNumbers.forEach(el => {
+        counterObserver.observe(el);
+    });
+
+    // Fade-in animations for cards
+    const cards = document.querySelectorAll('.card, .blog-article');
+    cards.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        fadeObserver.observe(el);
+    });
+
+    // Slide-in from left for timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item:nth-child(odd)');
+    timelineItems.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(-50px)';
+        el.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
+        slideLeftObserver.observe(el);
+    });
+
+    // Slide-in from right for timeline items
+    const timelineItemsRight = document.querySelectorAll('.timeline-item:nth-child(even)');
+    timelineItemsRight.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateX(50px)';
+        el.style.transition = `opacity 0.8s ease ${index * 0.2}s, transform 0.8s ease ${index * 0.2}s`;
+        slideRightObserver.observe(el);
+    });
+
+    // Scale-up animation for hero images
+    const heroImages = document.querySelectorAll('.hero-image, .hero img');
+    heroImages.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'scale(0.9)';
+        el.style.transition = 'opacity 1s ease, transform 1s ease';
+        scaleObserver.observe(el);
+    });
+
+    // Stagger animation for card grids
+    const cardGrids = document.querySelectorAll('.card-grid .card');
+    cardGrids.forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.5s ease ${index * 0.15}s, transform 0.5s ease ${index * 0.15}s`;
+        fadeObserver.observe(el);
+    });
+
+    // Fade-in for sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((el, index) => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+        el.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
+        fadeObserver.observe(el);
     });
 });
 
