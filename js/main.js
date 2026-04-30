@@ -35,68 +35,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // ============================================
-// ENHANCED COUNTER ANIMATION FOR NUMBERS
+// COUNTER ANIMATION FOR NUMBERS
 // ============================================
 function animateCounter(element, target, duration = 2000, suffix = '') {
     const start = 0;
     const increment = target / (duration / 16);
     let current = start;
 
-    // Add counting class for pulse effect
-    element.classList.add('counting');
-
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
             element.textContent = target + suffix;
             clearInterval(timer);
-            element.classList.remove('counting');
-
-            // Add completion animation
-            element.style.animation = 'numberBounce 0.6s ease';
-            setTimeout(() => {
-                element.style.animation = '';
-            }, 600);
         } else {
             element.textContent = Math.floor(current) + suffix;
         }
     }, 16);
-}
-
-// Enhanced counter with easing
-function animateCounterEased(element, target, duration = 2500, suffix = '') {
-    const start = 0;
-    const startTime = performance.now();
-
-    element.classList.add('counting');
-
-    function easeOutExpo(t) {
-        return t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-    }
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easedProgress = easeOutExpo(progress);
-        const current = Math.floor(start + (target - start) * easedProgress);
-
-        element.textContent = current + suffix;
-
-        if (progress < 1) {
-            requestAnimationFrame(update);
-        } else {
-            element.textContent = target + suffix;
-            element.classList.remove('counting');
-
-            // Completion effect
-            element.style.animation = 'numberBounce 0.6s ease';
-            setTimeout(() => {
-                element.style.animation = '';
-            }, 600);
-        }
-    }
-
-    requestAnimationFrame(update);
 }
 
 // ============================================
