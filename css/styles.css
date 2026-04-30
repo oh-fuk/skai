@@ -364,7 +364,7 @@ p {
 }
 
 .stat-item h2 {
-  color: white;
+  color: var(--charcoal);
   font-size: 3.5rem;
   margin-bottom: var(--spacing-sm);
   position: relative;
@@ -382,10 +382,20 @@ p {
   background-color: var(--accent-gold);
 }
 
+.stat-item .stat-number {
+  color: var(--charcoal) !important;
+}
+
 .stat-item p {
   color: white;
   font-size: 1.125rem;
   margin-top: var(--spacing-md);
+}
+
+.stat-icon {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
 }
 
 /* Testimonials */
@@ -586,7 +596,7 @@ p {
 /* Navigation */
 .navbar {
   background-color: var(--charcoal);
-  padding: var(--spacing-sm) 0;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -597,13 +607,16 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-height: 50px;
 }
 
 .nav-logo {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.75rem;
+  font-weight: 800;
   color: white;
   text-decoration: none;
+  letter-spacing: -0.5px;
+  line-height: 1;
 }
 
 .nav-logo span {
@@ -1029,11 +1042,12 @@ p {
 .stat-item h2 {
   font-size: 3.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--primary-red), var(--accent-gold));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--charcoal) !important;
   animation: pulse 2s ease-in-out infinite;
+}
+
+.stat-item .stat-number {
+  color: var(--charcoal) !important;
 }
 
 /* Hero Section Animations */

@@ -225,6 +225,19 @@ function validateForm(formId) {
     return isValid;
 }
 
+// ============================================
+// AUTO UPDATE COPYRIGHT YEAR
+// ============================================
+document.addEventListener('DOMContentLoaded', function () {
+    const currentYear = new Date().getFullYear();
+    const copyrightElements = document.querySelectorAll('.footer-bottom p');
+    copyrightElements.forEach(el => {
+        if (el.textContent.includes('©')) {
+            el.innerHTML = el.innerHTML.replace(/© \d{4}/, `© ${currentYear}`);
+        }
+    });
+});
+
 // Console message
 console.log('%c SKAICONNECT ', 'background: #B91C1C; color: white; font-size: 20px; padding: 10px;');
 console.log('%c Powering the Future of Customer Experience ', 'color: #D97706; font-size: 14px;');
